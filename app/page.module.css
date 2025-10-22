@@ -32,9 +32,9 @@
   padding: 4rem 2rem;
   background: linear-gradient(
     to bottom,
-    rgba(26, 35, 50, 0.85) 0%,
-    rgba(26, 35, 50, 0.75) 50%,
-    rgba(26, 35, 50, 0.85) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0.85) 100%
   );
   backdrop-filter: blur(3px);
 }
@@ -52,7 +52,7 @@
   margin-bottom: 1.5rem;
   color: var(--white);
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7),
-               0 0 20px rgba(139, 111, 71, 0.5);
+               0 0 20px rgba(220, 20, 60, 0.5);
   letter-spacing: 2px;
 }
 
@@ -112,23 +112,23 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  background: var(--white);
-  color: var(--dark-navy);
+  background: var(--primary-brown);
+  color: var(--white);
   padding: 1.5rem 3.5rem;
   border-radius: 50px;
   font-size: 1.4rem;
   font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(220, 20, 60, 0.4);
   border: 3px solid transparent;
 }
 
 .ctaButton:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.6);
-  background: var(--primary-brown);
-  color: var(--white);
-  border-color: var(--white);
+  box-shadow: 0 10px 35px rgba(220, 20, 60, 0.6);
+  background: var(--white);
+  color: var(--dark-navy);
+  border-color: var(--primary-brown);
 }
 
 .ctaButtonLarge {
@@ -142,12 +142,12 @@
   font-size: 1.5rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.4);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
 }
 
 .ctaButtonLarge:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.6);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
   background: var(--dark-navy);
 }
 
@@ -177,7 +177,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--dark-navy);
+  color: var(--white);
 }
 
 .sectionSubtitle {
@@ -189,7 +189,7 @@
 
 /* ==================== Video Section ==================== */
 .videoSection {
-  background: var(--cream);
+  background: #1a1a1a;
   padding: 5rem 0;
 }
 
@@ -248,7 +248,7 @@
 
 /* ==================== Units Section ==================== */
 .unitsSection {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 5rem 0;
 }
 
@@ -265,14 +265,14 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--cream);
+  background: #1a1a1a;
   border: 2px solid transparent;
   border-radius: 50px;
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: var(--text-dark);
+  color: var(--white);
 }
 
 .unitTab:hover {
@@ -301,12 +301,12 @@
 }
 
 .unitCard {
-  background: var(--dark-navy);
+  background: #1a1a1a;
   color: var(--white);
   padding: 3rem;
   border-radius: 20px;
   min-width: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
   border: 2px solid var(--primary-brown);
 }
 
@@ -333,7 +333,7 @@
 
 .infoLabel {
   font-size: 1.2rem;
-  color: var(--cream);
+  color: #cccccc;
 }
 
 .infoValue {
@@ -344,7 +344,7 @@
 
 /* ==================== Features Section ==================== */
 .featuresSection {
-  background: var(--cream);
+  background: #1a1a1a;
   padding: 5rem 0;
 }
 
@@ -356,17 +356,19 @@
 }
 
 .featureCard {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
+  border: 1px solid #2a2a2a;
 }
 
 .featureCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+  border-color: var(--primary-brown);
 }
 
 .featureIcon {
@@ -383,11 +385,11 @@
 .featureCard h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: var(--dark-navy);
+  color: var(--white);
 }
 
 .featureCard p {
-  color: var(--text-dark);
+  color: #cccccc;
   line-height: 1.6;
 }
 
@@ -406,7 +408,7 @@
 
 /* ==================== Why Buy Section ==================== */
 .whyBuySection {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 5rem 0;
 }
 
@@ -417,7 +419,7 @@
 }
 
 .guaranteeCard {
-  background: var(--cream);
+  background: #1a1a1a;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
@@ -438,11 +440,11 @@
 .guaranteeCard h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--dark-navy);
+  color: var(--white);
 }
 
 .guaranteeCard p {
-  color: var(--text-dark);
+  color: #cccccc;
 }
 
 /* ==================== Reviews Section ==================== */
@@ -488,7 +490,7 @@
 
 /* ==================== Pricing Section ==================== */
 .pricingSection {
-  background: var(--cream);
+  background: #1a1a1a;
   padding: 5rem 0;
 }
 
@@ -496,7 +498,7 @@
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: var(--dark-navy);
+  background: #0a0a0a;
   border-radius: 15px;
   border: 3px solid var(--primary-brown);
 }
@@ -515,10 +517,10 @@
 }
 
 .pricingCard {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.2);
   position: relative;
   border: 3px solid var(--primary-brown);
 }
@@ -538,7 +540,7 @@
 .pricingCard h3 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: var(--dark-navy);
+  color: var(--white);
   text-align: center;
 }
 
@@ -556,12 +558,12 @@
 
 .discountLabel {
   font-size: 1.5rem;
-  color: var(--text-dark);
+  color: #cccccc;
 }
 
 .pricingDesc {
   text-align: center;
-  color: var(--text-dark);
+  color: #cccccc;
   font-size: 1.1rem;
 }
 
@@ -573,8 +575,8 @@
 .pricingFeatures li {
   padding: 0.8rem 0;
   font-size: 1.1rem;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--cream);
+  color: #cccccc;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .pricingFeatures li:last-child {
@@ -591,7 +593,7 @@
 
 /* ==================== Gallery Section ==================== */
 .gallerySection {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 5rem 0;
 }
 
@@ -639,13 +641,13 @@
   font-size: 1.4rem;
   font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.4);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
   border: 3px solid transparent;
 }
 
 .downloadButton:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(139, 111, 71, 0.6);
+  box-shadow: 0 10px 30px rgba(220, 20, 60, 0.6);
   background: var(--dark-navy);
   border-color: var(--primary-brown);
 }
@@ -661,7 +663,7 @@
 
 /* ==================== Contact Section ==================== */
 .contactSection {
-  background: var(--cream);
+  background: #1a1a1a;
   padding: 5rem 0;
 }
 
@@ -672,19 +674,19 @@
 }
 
 .contactCard {
-  background: var(--white);
+  background: #0a0a0a;
   padding: 2.5rem;
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid var(--primary-brown);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(220, 20, 60, 0.2);
 }
 
 .contactCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  border-color: var(--dark-navy);
+  box-shadow: 0 12px 35px rgba(220, 20, 60, 0.4);
+  border-color: var(--primary-brown);
 }
 
 .contactIcon {
@@ -701,11 +703,11 @@
 .contactCard h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--dark-navy);
+  color: var(--white);
 }
 
 .contactCard p {
-  color: var(--text-dark);
+  color: #cccccc;
   font-size: 1.1rem;
 }
 
@@ -719,13 +721,13 @@
   font-size: 1.1rem;
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
 }
 
 .contactLink:hover {
   background: var(--dark-navy);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(26, 35, 50, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ==================== Footer ==================== */
@@ -783,12 +785,12 @@
   left: 30px;
   width: 70px;
   height: 70px;
-  background: #25D366;
+  background: #DC143C;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
   z-index: 999;
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
@@ -796,7 +798,7 @@
 
 .floatingWhatsapp:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
 }
 
 .whatsappIconFloat {
@@ -811,10 +813,10 @@
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
   }
   50% {
-    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+    box-shadow: 0 4px 25px rgba(220, 20, 60, 0.8);
   }
 }
 

@@ -1,11 +1,12 @@
 :root {
-  --primary-brown: #C41E3A;
-  --dark-navy: #1a2332;
-  --light-brown: #E63946;
-  --cream: #F5F1E8;
+  --primary-brown: #DC143C;
+  --dark-navy: #000000;
+  --light-brown: #FF0000;
+  --cream: #ffffff;
   --white: #ffffff;
-  --text-dark: #2c2c2c;
-  --accent-brown: #A4161A;
+  --text-dark: #000000;
+  --accent-brown: #DC143C;
+  --accent-gold: #DC143C;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,8 +22,8 @@ body {
 }
 
 body {
-  color: var(--text-dark);
-  background: var(--white);
+  color: var(--white);
+  background: var(--dark-navy);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
