@@ -5,56 +5,13 @@
   overflow-x: hidden;
 }
 
-/* ==================== Header ==================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(26, 35, 50, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.headerContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logoImg {
-  height: auto;
-}
-
-.nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav a {
-  color: var(--white);
-  font-weight: 500;
-  transition: color 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.nav a:hover {
-  color: var(--primary-brown);
-}
-
 /* ==================== Hero Section ==================== */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-top: 80px;
   overflow: hidden;
 }
 
@@ -938,73 +895,137 @@
 }
 
 /* ==================== Responsive Design ==================== */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
 
+/* Tablet */
+@media (max-width: 1024px) {
   .heroTitle {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .heroSubtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .heroContent {
+    padding: 2rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 
   .heroStats {
-    gap: 1rem;
+    flex-direction: row;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .stat {
-    min-width: 120px;
-    padding: 1rem;
+    min-width: 100px;
+    padding: 0.8rem;
   }
 
   .statNumber {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .statLabel {
+    font-size: 0.9rem;
+  }
+
+  .sectionContainer {
+    padding: 3rem 1rem;
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   .sectionSubtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .unitTabs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .unitTab {
+    width: 100%;
+    padding: 1.2rem;
   }
 
   .unitCard {
     min-width: auto;
     width: 100%;
+    padding: 2rem 1.5rem;
   }
 
   .featuresGrid,
   .guaranteeGrid,
-  .reviewsGrid,
   .pricingGrid,
   .contactGrid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCard,
+  .guaranteeCard,
+  .pricingCard,
+  .contactCard {
+    padding: 2rem 1.5rem;
   }
 
   .ctaButton,
   .ctaButtonLarge {
     padding: 1rem 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    width: 100%;
   }
 
   .floatingWhatsapp {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     bottom: 20px;
     left: 20px;
   }
 
   .whatsappIconFloat {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .videoWrapper {
     max-width: 100%;
     aspect-ratio: 16 / 9;
+    padding: 0;
+  }
+
+  .video {
+    border-radius: 8px;
   }
 
   .galleryGrid {
@@ -1013,8 +1034,20 @@
   }
 
   .downloadButton {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .lightboxClose {
@@ -1028,5 +1061,64 @@
   .lightboxContent {
     max-width: 95%;
     max-height: 95%;
+    padding: 1rem;
+  }
+
+  .lightboxImage {
+    border-radius: 8px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroStats {
+    gap: 0.5rem;
+  }
+
+  .stat {
+    min-width: 90px;
+    padding: 0.6rem;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+
+  .statLabel {
+    font-size: 0.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton,
+  .ctaButtonLarge,
+  .downloadButton {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .floatingWhatsapp {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .whatsappIconFloat {
+    font-size: 1.5rem;
   }
 }

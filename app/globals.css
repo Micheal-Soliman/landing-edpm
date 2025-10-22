@@ -8,8 +8,10 @@
   --accent-brown: #A4161A;
 }
 
-* {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 html,
@@ -26,6 +28,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
   text-align: right;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
@@ -39,3 +43,29 @@ a {
   text-decoration: none;
 }
 
+/* Performance optimizations */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  display: block;
+}
+
+/* Reduce layout shift */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* GPU acceleration for animations */
+.animated {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Content visibility for better performance */
+.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}

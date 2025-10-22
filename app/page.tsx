@@ -1,9 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "./page.module.css";
-import { FaStore, FaBriefcase, FaHospital, FaWhatsapp, FaPhone, FaEnvelope, FaWifi, FaShieldAlt, FaUsers, FaBuilding, FaCar, FaCoffee, FaCheckCircle, FaStar, FaPlay, FaDownload, FaImages, FaTimes } from 'react-icons/fa';
+import { FaStore, FaBriefcase, FaHospital, FaWhatsapp, FaPhone, FaEnvelope, FaWifi, FaShieldAlt, FaUsers, FaBuilding, FaCar, FaCoffee, FaCheckCircle, FaDownload, FaTimes } from 'react-icons/fa';
 import { IoRocketSharp } from 'react-icons/io5';
 
 export default function Home() {
@@ -37,28 +38,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Header / Navigation */}
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <Image
-            src="/logo.webp"
-            alt="Jaya Mark Logo"
-            width={120}
-            height={60}
-            priority
-            className={styles.logoImg}
-          />
-          <nav className={styles.nav}>
-            <a href="#video">الفيديو</a>
-            <a href="#units">الوحدات</a>
-            <a href="#features">المميزات</a>
-            <a href="#pricing">الأسعار</a>
-            <a href="#gallery">المعرض</a>
-            <a href="#contact">تواصل معنا</a>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className={styles.hero}>
         <video 
@@ -67,10 +46,10 @@ export default function Home() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/jaya mark/render/001.jpg"
         >
-          <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto,f_auto/v1761081436/JaYa_Mark_1_1_vh9e2u.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto:low,f_auto/v1761081436/JaYa_Mark_1_1_vh9e2u.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
@@ -114,7 +93,7 @@ export default function Home() {
               preload="metadata"
               poster="/jaya mark/render/003.jpg"
             >
-              <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto,f_auto/v1761082054/jaya_mark_video_3d_dfcv40.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto:low,f_auto/v1761082054/jaya_mark_video_3d_dfcv40.mp4" type="video/mp4" />
               متصفحك لا يدعم تشغيل الفيديو
             </video>
           </div>
@@ -288,34 +267,34 @@ export default function Home() {
           
           <div className={styles.galleryGrid}>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085410/001_ecpdeu.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085410/001_ecpdeu.jpg" alt="Jaya Mark Render 1" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085410/001_ecpdeu.jpg" alt="Jaya Mark Render 1" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761084599/003_pdtryr.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084599/003_pdtryr.jpg" alt="Jaya Mark Render 2" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084599/003_pdtryr.jpg" alt="Jaya Mark Render 2" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761084503/004_rj4eey.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084503/004_rj4eey.jpg" alt="Jaya Mark Render 3" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084503/004_rj4eey.jpg" alt="Jaya Mark Render 3" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085423/10_m4lcbe.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085423/10_m4lcbe.jpg" alt="Jaya Mark Render 4" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085423/10_m4lcbe.jpg" alt="Jaya Mark Render 4" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761084584/11_Batch_Night_View01a_avnw3r.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084584/11_Batch_Night_View01a_avnw3r.jpg" alt="Jaya Mark Night View 1" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761084584/11_Batch_Night_View01a_avnw3r.jpg" alt="Jaya Mark Night View 1" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085176/11_Batch_Night_View02a_dn6imy.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085176/11_Batch_Night_View02a_dn6imy.jpg" alt="Jaya Mark Night View 2" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085176/11_Batch_Night_View02a_dn6imy.jpg" alt="Jaya Mark Night View 2" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085297/12_offks7.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085297/12_offks7.jpg" alt="Jaya Mark Render 5" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085297/12_offks7.jpg" alt="Jaya Mark Render 5" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085442/C6_copy_fvduxa.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085442/C6_copy_fvduxa.jpg" alt="Jaya Mark Render 6" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085442/C6_copy_fvduxa.jpg" alt="Jaya Mark Render 6" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085507/N2_y7zuzr.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085507/N2_y7zuzr.jpg" alt="Jaya Mark Night 2" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085507/N2_y7zuzr.jpg" alt="Jaya Mark Night 2" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085532/N61_copy_dcsww5.jpg")}>
-              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085532/N61_copy_dcsww5.jpg" alt="Jaya Mark Night 6" width={800} height={600} className={styles.galleryImage} />
+              <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085532/N61_copy_dcsww5.jpg" alt="Jaya Mark Night 6" width={800} height={600} className={styles.galleryImage} loading="lazy" />
             </div>
           </div>
 
