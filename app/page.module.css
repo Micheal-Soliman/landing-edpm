@@ -1,0 +1,1032 @@
+/* ==================== Container ==================== */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==================== Header ==================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26, 35, 50, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoImg {
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: var(--white);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.nav a:hover {
+  color: var(--primary-brown);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 35, 50, 0.85) 0%,
+    rgba(26, 35, 50, 0.75) 50%,
+    rgba(26, 35, 50, 0.85) 100%
+  );
+  backdrop-filter: blur(3px);
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.heroTitle {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7),
+               0 0 20px rgba(139, 111, 71, 0.5);
+  letter-spacing: 2px;
+}
+
+.heroSubtitle {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  min-width: 170px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.statLabel {
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== CTA Buttons ==================== */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--white);
+  color: var(--dark-navy);
+  padding: 1.5rem 3.5rem;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+  border: 3px solid transparent;
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.6);
+  background: var(--primary-brown);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.ctaButtonLarge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary-brown);
+  color: var(--white);
+  padding: 1.5rem 4rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.4);
+}
+
+.ctaButtonLarge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.6);
+  background: var(--dark-navy);
+}
+
+.ctaCenter {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.whatsappIcon {
+  font-size: 1.5rem;
+}
+
+.whatsappIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ==================== Section Styles ==================== */
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--dark-navy);
+}
+
+.sectionSubtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-brown);
+}
+
+/* ==================== Video Section ==================== */
+.videoSection {
+  background: var(--cream);
+  padding: 5rem 0;
+}
+
+.videoWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--dark-navy);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  outline: none;
+  background: var(--dark-navy);
+}
+
+.video:focus {
+  outline: none;
+}
+
+.videoPlaceholder {
+  background: var(--dark-navy);
+  border-radius: 20px;
+  padding: 8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.videoPlaceholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.playIcon {
+  font-size: 4rem;
+  color: var(--white);
+}
+
+.playIcon svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* ==================== Units Section ==================== */
+.unitsSection {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+.unitTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.unitTab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--cream);
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.unitTab:hover {
+  border-color: var(--primary-brown);
+  transform: translateY(-2px);
+}
+
+.activeTab {
+  background: var(--primary-brown);
+  color: var(--white);
+  border-color: var(--primary-brown);
+}
+
+.unitIcon {
+  font-size: 1.5rem;
+}
+
+.unitIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.unitDetails {
+  display: flex;
+  justify-content: center;
+}
+
+.unitCard {
+  background: var(--dark-navy);
+  color: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  min-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary-brown);
+}
+
+.unitCard h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.unitInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.infoLabel {
+  font-size: 1.2rem;
+  color: var(--cream);
+}
+
+.infoValue {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* ==================== Features Section ==================== */
+.featuresSection {
+  background: var(--cream);
+  padding: 5rem 0;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featureCard {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-brown);
+}
+
+.featureIcon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.featureCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--dark-navy);
+}
+
+.featureCard p {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.featureHighlight {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-brown);
+  border-radius: 15px;
+  color: var(--white);
+}
+
+.featureHighlight h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* ==================== Why Buy Section ==================== */
+.whyBuySection {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+.guaranteeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.guaranteeCard {
+  background: var(--cream);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 3px solid var(--primary-brown);
+}
+
+.guaranteeIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-brown);
+}
+
+.guaranteeIcon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.guaranteeCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-navy);
+}
+
+.guaranteeCard p {
+  color: var(--text-dark);
+}
+
+/* ==================== Reviews Section ==================== */
+.reviewsSection {
+  background: var(--dark-navy);
+  padding: 5rem 0;
+  color: var(--white);
+}
+
+.reviewsSection .sectionTitle {
+  color: var(--white);
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.reviewCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.reviewStars {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.reviewText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.reviewAuthor {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* ==================== Pricing Section ==================== */
+.pricingSection {
+  background: var(--cream);
+  padding: 5rem 0;
+}
+
+.pricingHighlight {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--dark-navy);
+  border-radius: 15px;
+  border: 3px solid var(--primary-brown);
+}
+
+.pricingTitle {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pricingCard {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 3px solid var(--primary-brown);
+}
+
+.pricingBadge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: var(--primary-brown);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.pricingCard h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-navy);
+  text-align: center;
+}
+
+.pricingDiscount {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.discountPercent {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-brown);
+  display: block;
+}
+
+.discountLabel {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.pricingDesc {
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.pricingFeatures {
+  list-style: none;
+  padding: 0;
+}
+
+.pricingFeatures li {
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--cream);
+}
+
+.pricingFeatures li:last-child {
+  border-bottom: none;
+}
+
+.pricingNote {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-brown);
+  margin-top: 2rem;
+}
+
+/* ==================== Gallery Section ==================== */
+.gallerySection {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+}
+
+.galleryItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary-brown);
+  color: var(--white);
+  padding: 1.5rem 4rem;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.4);
+  border: 3px solid transparent;
+}
+
+.downloadButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(139, 111, 71, 0.6);
+  background: var(--dark-navy);
+  border-color: var(--primary-brown);
+}
+
+.downloadIcon {
+  font-size: 1.5rem;
+}
+
+.downloadIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ==================== Contact Section ==================== */
+.contactSection {
+  background: var(--cream);
+  padding: 5rem 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contactCard {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-brown);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contactCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: var(--dark-navy);
+}
+
+.contactIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-brown);
+}
+
+.contactIcon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.contactCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-navy);
+}
+
+.contactCard p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.contactLink {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: var(--primary-brown);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+}
+
+.contactLink:hover {
+  background: var(--dark-navy);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26, 35, 50, 0.4);
+}
+
+/* ==================== Footer ==================== */
+.footer {
+  background: var(--dark-navy);
+  color: var(--white);
+  padding: 3rem 0 1rem;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footerLogo {
+  text-align: center;
+}
+
+.footerLogo p {
+  margin-top: 1rem;
+  color: var(--cream);
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footerLinks a {
+  color: var(--cream);
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--primary-brown);
+}
+
+.footerCopyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--cream);
+}
+
+/* ==================== Floating WhatsApp Button ==================== */
+.floatingWhatsapp {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.floatingWhatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsappIconFloat {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.whatsappIconFloat svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+  }
+}
+
+/* ==================== Lightbox ==================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--primary-brown);
+  color: var(--white);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightboxClose:hover {
+  background: var(--white);
+  color: var(--primary-brown);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.lightboxContent {
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightboxImage {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .heroStats {
+    gap: 1rem;
+  }
+
+  .stat {
+    min-width: 120px;
+    padding: 1rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .unitCard {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .featuresGrid,
+  .guaranteeGrid,
+  .reviewsGrid,
+  .pricingGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButton,
+  .ctaButtonLarge {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .floatingWhatsapp {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .whatsappIconFloat {
+    font-size: 2rem;
+  }
+
+  .videoWrapper {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .downloadButton {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .lightboxClose {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .lightboxContent {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
