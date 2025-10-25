@@ -11,10 +11,66 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<'commercial' | 'adminClinic'>('commercial');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    unitType: 'تجاري',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const whatsappNumber = "201000000000"; // استبدل برقم الواتساب الفعلي
   const whatsappMessage = encodeURIComponent("مرحباً، أريد الاستفسار عن مشروع Jaya Mark");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('loading');
+
+    try {
+      // استبدل هذا الرابط بـ Google Apps Script URL الخاص بك
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVF4QSrX3-4n50xqCSRVgBQhLxQ-cwHjE8nOnQQgqJaY89SH0PWqpYiCn61rwNW4C58A/exec';
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          unitType: formData.unitType,
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      setFormStatus('success');
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        unitType: 'تجاري',
+        message: ''
+      });
+
+      setTimeout(() => setFormStatus('idle'), 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 3000);
+    }
+  };
 
   const unitTypes = {
     commercial: {
@@ -75,8 +131,8 @@ export default function Home() {
       {/* Video Section */}
       <section className={styles.videoSection} id="video">
         <div className={styles.sectionContainer}>
-          <h2 className={styles.sectionTitle}>شاهد المشروع بتقنية 3D</h2>
-          <p className={styles.sectionSubtitle}>جولة افتراضية شاملة توضح كل تفاصيل المشروع</p>
+          <h2 className={styles.sectionTitle}>نبذة عن مشروعنا</h2>
+          <p className={styles.sectionSubtitle}>تعرف على مشروع Jaya Mark وكل ما يميزه من خلال هذا الفيديو</p>
           <div className={styles.videoWrapper}>
             <video 
               className={styles.video}
@@ -267,13 +323,6 @@ export default function Home() {
 
           <div className={styles.pricingNote}>
             <p>مفيش أسهل من كدا! 🎉</p>
-          </div>
-
-          <div className={styles.ctaCenter}>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButtonLarge}>
-              <FaWhatsapp className={styles.whatsappIcon} />
-              استفسر عن أنظمة السداد عبر واتساب
-            </a>
           </div>
         </div>
       </section>
@@ -541,23 +590,112 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>تواصل معنا الآن</h2>
           <p className={styles.sectionSubtitle}>فريقنا جاهز للرد على استفساراتك</p>
           
-          <div className={styles.contactGrid}>
-            <div className={styles.contactCard}>
-              <div className={styles.contactIcon}><FaWhatsapp /></div>
-              <h3>واتساب</h3>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                تواصل عبر واتساب
-              </a>
+          <div className={styles.contactWrapper}>
+            {/* Contact Form */}
+            <div className={styles.contactFormContainer}>
+              <h3 className={styles.formTitle}>أرسل لنا رسالة</h3>
+              <form onSubmit={handleFormSubmit} className={styles.contactForm}>
+                <div className={styles.formGroup}>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    placeholder="الاسم الكامل"
+                    required
+                    className={styles.formInput}
+                  />
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleFormChange}
+                    placeholder="رقم الهاتف"
+                    required
+                    pattern="[0-9]*"
+                    inputMode="numeric"
+                    dir="ltr"
+                    className={styles.formInput}
+                  />
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    placeholder="البريد الإلكتروني"
+                    required
+                    className={styles.formInput}
+                  />
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <select
+                    name="unitType"
+                    value={formData.unitType}
+                    onChange={handleFormChange}
+                    className={styles.formSelect}
+                  >
+                    <option value="تجاري">وحدة تجارية</option>
+                    <option value="إداري">وحدة إدارية</option>
+                    <option value="طبي">وحدة طبية</option>
+                    <option value="غير محدد">غير محدد</option>
+                  </select>
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    placeholder="رسالتك"
+                    rows={4}
+                    className={styles.formTextarea}
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  className={styles.formButton}
+                  disabled={formStatus === 'loading'}
+                >
+                  {formStatus === 'loading' ? 'جاري الإرسال...' : 'إرسال'}
+                </button>
+                
+                {formStatus === 'success' && (
+                  <p className={styles.formSuccess}>تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</p>
+                )}
+                
+                {formStatus === 'error' && (
+                  <p className={styles.formError}>حدث خطأ. يرجى المحاولة مرة أخرى.</p>
+                )}
+              </form>
             </div>
-            <div className={styles.contactCard}>
-              <div className={styles.contactIcon}><FaPhone /></div>
-              <h3>اتصل بنا</h3>
-              <p>+20 100 000 0000</p>
-            </div>
-            <div className={styles.contactCard}>
-              <div className={styles.contactIcon}><FaEnvelope /></div>
-              <h3>البريد الإلكتروني</h3>
-              <p>info@jayamark.com</p>
+
+            {/* Contact Info */}
+            <div className={styles.contactInfo}>
+              <div className={styles.contactCard}>
+                <div className={styles.contactIcon}><FaWhatsapp /></div>
+                <h3>واتساب</h3>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                  تواصل عبر واتساب
+                </a>
+              </div>
+              <div className={styles.contactCard}>
+                <div className={styles.contactIcon}><FaPhone /></div>
+                <h3>اتصل بنا</h3>
+                <p>+20 100 000 0000</p>
+              </div>
+              <div className={styles.contactCard}>
+                <div className={styles.contactIcon}><FaEnvelope /></div>
+                <h3>البريد الإلكتروني</h3>
+                <p>info@jayamark.com</p>
+              </div>
             </div>
           </div>
         </div>
