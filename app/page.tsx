@@ -447,12 +447,12 @@ export default function Home() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
-                <span>كم خصم الكاش في Jaya Mark؟</span>
+                <span>ما هي مساحات الوحدات التجارية؟</span>
                 {openFaq === 0 ? <FaChevronUp /> : <FaChevronDown />}
               </button>
               {openFaq === 0 && (
                 <div className={styles.faqAnswer}>
-                  <p>خصم كاش 25% على سعر الوحدة عند الدفع الفوري.</p>
+                  <p>الوحدات التجارية تبدأ من 105 متر وحتى 225 متر بمتوسط سعر 8.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
@@ -462,12 +462,12 @@ export default function Home() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
               >
-                <span>كم المقدم المطلوب؟</span>
+                <span>ما هي مساحات الوحدات الإدارية والطبية؟</span>
                 {openFaq === 1 ? <FaChevronUp /> : <FaChevronDown />}
               </button>
               {openFaq === 1 && (
                 <div className={styles.faqAnswer}>
-                  <p>مقدم 5% فقط مع تقسيط على 10 سنوات بدون فوائد.</p>
+                  <p>الوحدات الإدارية والطبية من 63 متر حتى 78 متر بمتوسط سعر 3.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
@@ -477,12 +477,12 @@ export default function Home() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
-                <span>ما هي مساحات الوحدات التجارية؟</span>
+                <span>ما هي العروض والخصومات المتاحة؟</span>
                 {openFaq === 2 ? <FaChevronUp /> : <FaChevronDown />}
               </button>
               {openFaq === 2 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات التجارية تبدأ من 105 متر وحتى 225 متر بسعر متوسط 10 مليون جنيه.</p>
+                  <p>خصم فوري 500 ألف جنيه وخصم كاش يصل إلى 10% على سعر الوحدة.</p>
                 </div>
               )}
             </div>
@@ -492,12 +492,12 @@ export default function Home() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
               >
-                <span>ما هي مساحات الوحدات الإدارية والطبية؟</span>
+                <span>ما هي أنظمة السداد المتاحة؟</span>
                 {openFaq === 3 ? <FaChevronUp /> : <FaChevronDown />}
               </button>
               {openFaq === 3 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات الإدارية والطبية من 63 متر حتى 78 متر بمتوسط سعر 3.5 مليون جنيه.</p>
+                  <p>مقدم 5% فقط مع تقسيط على 10 سنوات، أو خصم كاش 25% عند الدفع الفوري.</p>
                 </div>
               )}
             </div>
@@ -527,7 +527,7 @@ export default function Home() {
               </button>
               {openFaq === 5 && (
                 <div className={styles.faqAnswer}>
-                  <p>يمكنك الحجز مباشرة عبر واتساب أو الاتصال بنا، وسيقوم فريقنا بمساعدتك في اختيار الوحدة المناسبة وإتمام إجراءات الحجز.</p>
+                  <p>يمكنك الحجز مباشرة عبر واتساب أو الاتصال بنا، وسيقوم فريقنا بمساعدتك في اختيار الوحدة المناسبة.</p>
                 </div>
               )}
             </div>
