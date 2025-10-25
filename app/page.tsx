@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useState, lazy, Suspense } from "react";
 import dynamic from "next/dynamic";
 import styles from "./page.module.css";
-import { FaStore, FaBriefcase, FaHospital, FaWhatsapp, FaPhone, FaEnvelope, FaWifi, FaShieldAlt, FaUsers, FaBuilding, FaCar, FaCoffee, FaCheckCircle, FaDownload, FaTimes } from 'react-icons/fa';
+import { FaStore, FaBriefcase, FaHospital, FaWhatsapp, FaPhone, FaEnvelope, FaWifi, FaShieldAlt, FaUsers, FaBuilding, FaCar, FaCoffee, FaCheckCircle, FaDownload, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { IoRocketSharp } from 'react-icons/io5';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'commercial' | 'admin' | 'clinic'>('commercial');
+  const [activeTab, setActiveTab] = useState<'commercial' | 'adminClinic'>('commercial');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const whatsappNumber = "201000000000"; // استبدل برقم الواتساب الفعلي
   const whatsappMessage = encodeURIComponent("مرحباً، أريد الاستفسار عن مشروع Jaya Mark");
@@ -22,17 +23,11 @@ export default function Home() {
       price: '10 مليون جنيه',
       icon: <FaStore />
     },
-    admin: {
-      name: 'إداري',
+    adminClinic: {
+      name: 'إداري و طبي',
       area: '63 - 78 متر',
       price: '3.5 مليون جنيه',
-      icon: <FaBriefcase />
-    },
-    clinic: {
-      name: 'طبي',
-      area: '63 - 78 متر',
-      price: '3.5 مليون جنيه',
-      icon: <FaHospital />
+      icon: <FaBuilding />
     }
   };
 
@@ -47,9 +42,9 @@ export default function Home() {
           muted
           playsInline
           preload="metadata"
-          poster="/jaya mark/render/001.jpg"
+          poster="/jaya mark/render/003.jpg"
         >
-          <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto:low,f_auto/v1761081436/JaYa_Mark_1_1_vh9e2u.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto:low,f_auto/v1761082054/jaya_mark_video_3d_dfcv40.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
@@ -93,7 +88,7 @@ export default function Home() {
               preload="metadata"
               poster="/jaya mark/render/003.jpg"
             >
-              <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/q_auto:low,f_auto/v1761082054/jaya_mark_video_3d_dfcv40.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/v1761400167/ed4_1_j17ta3.mp4" type="video/mp4" />
               متصفحك لا يدعم تشغيل الفيديو
             </video>
           </div>
@@ -105,6 +100,30 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>اختر الوحدة المناسبة لك</h2>
           <p className={styles.sectionSubtitle}>مكاتب بمساحات مختلفة تناسب احتياجك</p>
+          
+          <div className={styles.priceHighlightBox}>
+            <div className={styles.priceItem}>
+              <span className={styles.priceIcon}>🏢</span>
+              <div className={styles.priceInfo}>
+                <h3>تجاري</h3>
+                <p className={styles.priceValue}>متوسط السعر 8.5 مليون جنيه</p>
+              </div>
+            </div>
+            <div className={styles.priceItem}>
+              <span className={styles.priceIcon}>🏥</span>
+              <div className={styles.priceInfo}>
+                <h3>إداري و طبي</h3>
+                <p className={styles.priceValue}>متوسط السعر 3.5 مليون جنيه</p>
+              </div>
+            </div>
+            <div className={styles.discountBanner}>
+              <span className={styles.discountIcon}>🎁</span>
+              <div className={styles.discountInfo}>
+                <h3>عروض خاصة</h3>
+                <p>خصم فوري 500 ألف جنيه • خصم كاش يصل لـ 10%</p>
+              </div>
+            </div>
+          </div>
           
           <div className={styles.unitTabs}>
             {Object.entries(unitTypes).map(([key, unit]) => (
@@ -303,6 +322,215 @@ export default function Home() {
               <FaDownload className={styles.downloadIcon} />
               حمل البروشور الكامل PDF
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className={styles.testimonialsSection} id="testimonials">
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>آراء عملائنا</h2>
+          <p className={styles.sectionSubtitle}>ثقة عملائنا هي أكبر إنجازاتنا</p>
+          
+          <div className={styles.testimonialsGrid}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg" 
+                alt="رأي عميل 1" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg" 
+                alt="رأي عميل 2" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg" 
+                alt="رأي عميل 3" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg" 
+                alt="رأي عميل 4" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg" 
+                alt="رأي عميل 5" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg" 
+                alt="رأي عميل 6" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg" 
+                alt="رأي عميل 7" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg" 
+                alt="رأي عميل 8" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg")}>
+              <Image 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg" 
+                alt="رأي عميل 9" 
+                width={600} 
+                height={800}
+                className={styles.testimonialImg}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className={styles.faqSection} id="faqs">
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>الأسئلة الشائعة</h2>
+          <p className={styles.sectionSubtitle}>إجابات على أكثر الأسئلة شيوعاً</p>
+          
+          <div className={styles.faqContainer}>
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
+              >
+                <span>كم خصم الكاش في Jaya Mark؟</span>
+                {openFaq === 0 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 0 && (
+                <div className={styles.faqAnswer}>
+                  <p>خصم كاش 25% على سعر الوحدة عند الدفع الفوري.</p>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
+              >
+                <span>كم المقدم المطلوب؟</span>
+                {openFaq === 1 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 1 && (
+                <div className={styles.faqAnswer}>
+                  <p>مقدم 5% فقط مع تقسيط على 10 سنوات بدون فوائد.</p>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
+              >
+                <span>ما هي مساحات الوحدات التجارية؟</span>
+                {openFaq === 2 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 2 && (
+                <div className={styles.faqAnswer}>
+                  <p>الوحدات التجارية تبدأ من 105 متر وحتى 225 متر بسعر متوسط 10 مليون جنيه.</p>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
+              >
+                <span>ما هي مساحات الوحدات الإدارية والطبية؟</span>
+                {openFaq === 3 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 3 && (
+                <div className={styles.faqAnswer}>
+                  <p>الوحدات الإدارية والطبية من 63 متر حتى 78 متر بمتوسط سعر 3.5 مليون جنيه.</p>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
+              >
+                <span>ما هي مميزات المشروع؟</span>
+                {openFaq === 4 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 4 && (
+                <div className={styles.faqAnswer}>
+                  <p>إنترنت سريع 24 ساعة، نظام أمان عالي، غرف اجتماعات جاهزة، نظام مبنى ذكي، جراج خاص ومواقف، مطاعم وكافيهات.</p>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.faqItem}>
+              <button 
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}
+              >
+                <span>كيف أحجز وحدة في Jaya Mark؟</span>
+                {openFaq === 5 ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaq === 5 && (
+                <div className={styles.faqAnswer}>
+                  <p>يمكنك الحجز مباشرة عبر واتساب أو الاتصال بنا، وسيقوم فريقنا بمساعدتك في اختيار الوحدة المناسبة وإتمام إجراءات الحجز.</p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
