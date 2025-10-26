@@ -741,52 +741,26 @@
 
 /* ==================== Testimonials Section ==================== */
 .testimonialsSection {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
-  padding: 5rem 0;
-  position: relative;
-}
-
-.testimonialsSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-brown) 50%, transparent 100%);
-}
-
-.testimonialsSection::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-brown) 50%, transparent 100%);
+  background: #0a0a0a;
+  padding: 4rem 0;
 }
 
 .testimonialsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .testimonialCard {
-  border-radius: 12px;
-  background: #fff;
   cursor: pointer;
-  padding: 1rem;
-  box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
-  border: 2px solid rgba(220, 20, 60, 0.1);
+  overflow: hidden;
 }
 
 .testimonialImg {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 
 /* ==================== FAQs Section ==================== */
@@ -1224,6 +1198,7 @@
 
   .testimonialsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .contactWrapper {
@@ -1455,6 +1430,7 @@
 
   .testimonialsGrid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .downloadButton {

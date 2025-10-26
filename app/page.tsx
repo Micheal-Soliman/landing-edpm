@@ -75,13 +75,13 @@ export default function Home() {
   const unitTypes = {
     commercial: {
       name: 'تجاري',
-      area: '105 - 225 متر',
+      area: 'مساحات متنوعة تبدأ من 27 متر',
       price: 'متوسط السعر 8.5 مليون جنيه',
       icon: <FaStore />
     },
     adminClinic: {
       name: 'إداري و طبي',
-      area: '63 - 78 متر',
+      area: 'مساحات متنوعة تبدأ من 27 متر',
       price: '3.5 مليون جنيه',
       icon: <FaBuilding />
     }
@@ -379,99 +379,81 @@ export default function Home() {
           
           <div className={styles.testimonialsGrid}>
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg" 
                 alt="رأي عميل 1" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg" 
                 alt="رأي عميل 2" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg" 
                 alt="رأي عميل 3" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg" 
                 alt="رأي عميل 4" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg" 
                 alt="رأي عميل 5" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg" 
                 alt="رأي عميل 6" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg" 
                 alt="رأي عميل 7" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg" 
                 alt="رأي عميل 8" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg")}>
-              <Image 
+              <img 
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg" 
                 alt="رأي عميل 9" 
-                width={600} 
-                height={800}
                 className={styles.testimonialImg}
                 loading="lazy"
               />
@@ -497,7 +479,7 @@ export default function Home() {
               </button>
               {openFaq === 0 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات التجارية تبدأ من 105 متر وحتى 225 متر بمتوسط سعر 8.5 مليون جنيه.</p>
+                  <p>الوحدات التجارية بمساحات متنوعة تبدأ من 27 متر بمتوسط سعر 8.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
@@ -512,7 +494,7 @@ export default function Home() {
               </button>
               {openFaq === 1 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات الإدارية والطبية من 63 متر حتى 78 متر بمتوسط سعر 3.5 مليون جنيه.</p>
+                  <p>الوحدات الإدارية والطبية بمساحات متنوعة تبدأ من 27 متر بمتوسط سعر 3.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
