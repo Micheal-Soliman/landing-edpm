@@ -383,7 +383,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg" 
                 alt="رأي عميل 1" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -392,7 +391,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg" 
                 alt="رأي عميل 2" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -401,7 +399,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg" 
                 alt="رأي عميل 3" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -410,7 +407,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg" 
                 alt="رأي عميل 4" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -419,7 +415,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg" 
                 alt="رأي عميل 5" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -428,7 +423,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg" 
                 alt="رأي عميل 6" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -437,7 +431,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg" 
                 alt="رأي عميل 7" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -446,7 +439,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg" 
                 alt="رأي عميل 8" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
 
@@ -455,7 +447,6 @@ export default function Home() {
                 src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg" 
                 alt="رأي عميل 9" 
                 className={styles.testimonialImg}
-                loading="lazy"
               />
             </div>
           </div>
