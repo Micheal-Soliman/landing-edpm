@@ -426,6 +426,27 @@
   color: var(--white);
 }
 
+.highlightText {
+  color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, var(--primary-brown) 0%, var(--light-brown) 100%);
+  padding: 1.2rem 2rem;
+  border-radius: 15px;
+  display: block;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+  text-align: center;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.highlightText:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.5);
+}
+
 /* ==================== Features Section ==================== */
 .featuresSection {
   background: #1a1a1a;

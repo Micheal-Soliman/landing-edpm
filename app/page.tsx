@@ -75,14 +75,14 @@ export default function Home() {
   const unitTypes = {
     commercial: {
       name: 'تجاري',
-      area: 'مساحات متنوعة تبدأ من 27 متر',
+      area: 'مساحات متنوعة',
       price: 'متوسط السعر 8.5 مليون جنيه',
       icon: <FaStore />
     },
     adminClinic: {
       name: 'إداري و طبي',
-      area: 'مساحات متنوعة تبدأ من 27 متر',
-      price: '3.5 مليون جنيه',
+      area: 'مساحات متنوعة',
+      price: 'متوسط السعر 3.5 مليون جنيه',
       icon: <FaBuilding />
     }
   };
@@ -194,10 +194,7 @@ export default function Home() {
             <div className={styles.unitCard}>
               <h3>{unitTypes[activeTab].name}</h3>
               <div className={styles.unitInfo}>
-                <div className={styles.infoItem}>
-                  <span className={styles.infoLabel}>المساحة</span>
-                  <span className={styles.infoValue}>{unitTypes[activeTab].area}</span>
-                </div>
+                  <span className={styles.highlightText}>{unitTypes[activeTab].area}</span>
                 <div className={styles.infoItem}>
                   <span className={styles.infoLabel}>السعر</span>
                   <span className={styles.infoValue}>{unitTypes[activeTab].price}</span>
@@ -262,6 +259,32 @@ export default function Home() {
       <section className={styles.whyBuySection}>
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>ضمان استثمارك</h2>
+          <p className={styles.sectionSubtitle}>استثمار آمن ومضمون بأعلى معايير الجودة</p>
+          
+          <div className={styles.priceHighlightBox}>
+            <div className={styles.priceItem}>
+              <span className={styles.priceIcon}>📍</span>
+              <div className={styles.priceInfo}>
+                <h3>موقع استراتيجي</h3>
+                <p className={styles.priceValue}>في قلب المنطقة التجارية</p>
+              </div>
+            </div>
+            <div className={styles.priceItem}>
+              <span className={styles.priceIcon}>💰</span>
+              <div className={styles.priceInfo}>
+                <h3>عائد استثماري مضمون</h3>
+                <p className={styles.priceValue}>استثمار آمن ومربح</p>
+              </div>
+            </div>
+            <div className={styles.discountBanner}>
+              <span className={styles.discountIcon}>⭐</span>
+              <div className={styles.discountInfo}>
+                <h3>جودة عالية</h3>
+                <p>تشطيبات فاخرة • مواد عالية الجودة</p>
+              </div>
+            </div>
+          </div>
+
           <div className={styles.guaranteeGrid}>
             <div className={styles.guaranteeCard}>
               <div className={styles.guaranteeIcon}><FaCheckCircle /></div>
