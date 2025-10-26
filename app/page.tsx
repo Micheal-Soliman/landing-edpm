@@ -120,10 +120,6 @@ export default function Home() {
                 <span className={styles.statLabel}>متوسط السعر</span>
               </div>
             </div>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
-              <FaWhatsapp className={styles.whatsappIcon} />
-              احجز وحدتك الآن عبر واتساب
-            </a>
           </div>
         </div>
       </section>
