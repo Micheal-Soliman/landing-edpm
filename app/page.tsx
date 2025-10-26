@@ -76,7 +76,7 @@ export default function Home() {
     commercial: {
       name: 'تجاري',
       area: '105 - 225 متر',
-      price: '10 مليون جنيه',
+      price: 'متوسط السعر 8.5 مليون جنيه',
       icon: <FaStore />
     },
     adminClinic: {
@@ -176,7 +176,7 @@ export default function Home() {
               <span className={styles.discountIcon}>🎁</span>
               <div className={styles.discountInfo}>
                 <h3>عروض خاصة</h3>
-                <p>خصم فوري 500 ألف جنيه • خصم كاش يصل لـ 10%</p>
+                <p>خصم فوري 500 ألف جنيه • خصم كاش يصل لـ 25%</p>
               </div>
             </div>
           </div>
@@ -531,7 +531,7 @@ export default function Home() {
               </button>
               {openFaq === 2 && (
                 <div className={styles.faqAnswer}>
-                  <p>خصم فوري 500 ألف جنيه وخصم كاش يصل إلى 10% على سعر الوحدة.</p>
+                  <p>خصم فوري 500 ألف جنيه وخصم كاش يصل إلى 25% على سعر الوحدة.</p>
                 </div>
               )}
             </div>
