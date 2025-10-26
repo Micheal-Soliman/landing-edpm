@@ -640,6 +640,14 @@
   display: block;
 }
 
+.discountPercentRed {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ff0000;
+  display: block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .discountLabel {
   font-size: 1.5rem;
   color: #cccccc;
@@ -649,6 +657,13 @@
   text-align: center;
   color: #cccccc;
   font-size: 1.1rem;
+}
+
+.pricingDescWhite {
+  text-align: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .pricingFeatures {
@@ -665,6 +680,11 @@
 
 .pricingFeatures li:last-child {
   border-bottom: none;
+}
+
+.redText {
+  color: #ff0000;
+  font-weight: 700;
 }
 
 .pricingNote {

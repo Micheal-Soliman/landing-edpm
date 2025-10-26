@@ -288,7 +288,7 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>سعر الوحدات وأنظمة التقسيط المتاحة</h2>
           
           <div className={styles.pricingHighlight}>
-            <h3 className={styles.pricingTitle}>والمفاجأة... إن كل ده بحوالي 3.5 مليون جنيه!</h3>
+            <h3 className={styles.pricingTitle}>المفاجأة إن أسعارنا بتبدأ من 3.5 مليون جنيه في اول مربع</h3>
           </div>
 
           <div className={styles.pricingGrid}>
@@ -296,21 +296,19 @@ export default function Home() {
               <div className={styles.pricingBadge}>الأفضل</div>
               <h3>الدفع كاش</h3>
               <div className={styles.pricingDiscount}>
-                <span className={styles.discountPercent}>25%</span>
-                <span className={styles.discountLabel}>خصم</span>
+                <span className={styles.discountPercentRed}>25% خصم</span>
               </div>
-              <p className={styles.pricingDesc}>خصم يصل لـ 25% على الدفع الكامل</p>
+              <p className={styles.pricingDescWhite}>لما تدفع كاش</p>
             </div>
 
             <div className={styles.pricingCard}>
               <h3>التقسيط</h3>
               <div className={styles.pricingDiscount}>
-                <span className={styles.discountPercent}>10%</span>
-                <span className={styles.discountLabel}>خصم</span>
+                <span className={styles.discountPercentRed}>10% خصم</span>
               </div>
               <ul className={styles.pricingFeatures}>
                 <li>✓ مقدم 5% فقط من سعر الوحدة</li>
-                <li>✓ خصم حتى 10% من سعر الوحدة</li>
+                <li>✓ <span className={styles.redText}>خصم حتى 10%</span> من سعر الوحدة</li>
                 <li>✓ أنظمة سداد مرنة</li>
                 <li>✓ الاستلام من 9 شهور لحد 3 سنين</li>
               </ul>
@@ -378,74 +376,58 @@ export default function Home() {
           <p className={styles.sectionSubtitle}>ثقة عملائنا هي أكبر إنجازاتنا</p>
           
           <div className={styles.testimonialsGrid}>
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.45.47_AM_amj4mk.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.24_PM_iaipmd.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.45.47_AM_amj4mk.jpg" 
                 alt="رأي عميل 1" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.46.01_AM_zlo0os.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.34_PM_rw3fmh.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.46.01_AM_zlo0os.jpg" 
                 alt="رأي عميل 2" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.27_AM_j8rsbh.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400371/WhatsApp_Image_2025-10-25_at_4.29.56_PM_csprli.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.27_AM_j8rsbh.jpg" 
                 alt="رأي عميل 3" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.16_AM_wwvbod.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.11_PM_rsw4ik.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.16_AM_wwvbod.jpg" 
                 alt="رأي عميل 4" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.58_AM_gcxjsx.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.31_PM_xs1pks.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.58_AM_gcxjsx.jpg" 
                 alt="رأي عميل 5" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.41_AM_jdjkk7.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.47_PM_vhathx.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.41_AM_jdjkk7.jpg" 
                 alt="رأي عميل 6" 
                 className={styles.testimonialImg}
               />
             </div>
 
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg")}>
+            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515667/WhatsApp_Image_2025-10-27_at_12.45.30_AM_xqyuzl.jpg")}>
               <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.30.57_PM_znoics.jpg" 
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515667/WhatsApp_Image_2025-10-27_at_12.45.30_AM_xqyuzl.jpg" 
                 alt="رأي عميل 7" 
-                className={styles.testimonialImg}
-              />
-            </div>
-
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.22_PM_yehzdw.jpg" 
-                alt="رأي عميل 8" 
-                className={styles.testimonialImg}
-              />
-            </div>
-
-            <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761400372/WhatsApp_Image_2025-10-25_at_4.31.44_PM_lyr21b.jpg" 
-                alt="رأي عميل 9" 
                 className={styles.testimonialImg}
               />
             </div>
