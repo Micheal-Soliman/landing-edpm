@@ -116,8 +116,8 @@ export default function Home() {
                 <span className={styles.statLabel}>مقدم فقط</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statNumber}>3.5م</span>
-                <span className={styles.statLabel}>متوسط السعر</span>
+                <span className={styles.statNumber}>حتى 10 سنين</span>
+                <span className={styles.statLabel}>تقسيط</span>
               </div>
             </div>
           </div>
@@ -196,7 +196,6 @@ export default function Home() {
               <div className={styles.unitInfo}>
                 <span className={styles.highlightText}>{unitTypes[activeTab].area}</span>
                 <div className={styles.infoItem}>
-                  <span className={styles.infoLabel}>السعر</span>
                   <span className={styles.infoValue}>{unitTypes[activeTab].price}</span>
                 </div>
               </div>
@@ -208,7 +207,7 @@ export default function Home() {
       {/* Features Section */}
       <section className={styles.featuresSection} id="features">
         <div className={styles.sectionContainer}>
-          <h2 className={styles.sectionTitle}>مميزات الوحدات دوناً عن سواها</h2>
+          <h2 className={styles.sectionTitle}>مميزات الوحدات</h2>
           <p className={styles.sectionSubtitle}>ليه تشتري الوحدات دي؟</p>
 
           <div className={styles.featuresGrid}>
@@ -261,29 +260,6 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>ضمان استثمارك</h2>
           <p className={styles.sectionSubtitle}>استثمار آمن ومضمون بأعلى معايير الجودة</p>
 
-          <div className={styles.priceHighlightBox}>
-            <div className={styles.priceItem}>
-              <span className={styles.priceIcon}>📍</span>
-              <div className={styles.priceInfo}>
-                <h3>موقع استراتيجي</h3>
-                <p className={styles.priceValue}>في قلب المنطقة التجارية</p>
-              </div>
-            </div>
-            <div className={styles.priceItem}>
-              <span className={styles.priceIcon}>💰</span>
-              <div className={styles.priceInfo}>
-                <h3>عائد استثماري مضمون</h3>
-                <p className={styles.priceValue}>استثمار آمن ومربح</p>
-              </div>
-            </div>
-            <div className={styles.discountBanner}>
-              <span className={styles.discountIcon}>⭐</span>
-              <div className={styles.discountInfo}>
-                <h3>جودة عالية</h3>
-                <p>تشطيبات فاخرة • مواد عالية الجودة</p>
-              </div>
-            </div>
-          </div>
 
           <div className={styles.guaranteeGrid}>
             <div className={styles.guaranteeCard}>
@@ -323,7 +299,7 @@ export default function Home() {
               </div>
               <ul className={styles.pricingFeatures}>
                 <li>✓ لما تدفع كاش</li>
-                <li>✓ الاستلام من 9 شهور لحد 3 سنين</li>
+                <li>✓ الاستلام سنتين</li>
               </ul>
             </div>
 
@@ -335,7 +311,7 @@ export default function Home() {
               <ul className={styles.pricingFeatures}>
                 <li>✓ مقدم 5% فقط من سعر الوحدة</li>
                 <li>✓ أنظمة سداد مرنة</li>
-                <li>✓ الاستلام من 9 شهور لحد 3 سنين</li>
+                <li>✓ الاستلام سنتين</li>
               </ul>
             </div>
           </div>
@@ -565,9 +541,9 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>تواصل معنا الآن</h2>
           <p className={styles.sectionSubtitle}>فريقنا جاهز للرد على استفساراتك</p>
+          <p className={styles.contactPhone}>للاستفسار اتصل بنا على: <a href="tel:15734" className={styles.phoneLink}>15734</a></p>
 
-          <div className={styles.contactWrapper}>
-            {/* Contact Form */}
+          <div className={styles.contactFormWrapper}>
             <div className={styles.contactFormContainer}>
               <h3 className={styles.formTitle}>أرسل لنا رسالة</h3>
               <form onSubmit={handleFormSubmit} className={styles.contactForm}>
@@ -652,27 +628,6 @@ export default function Home() {
                 )}
               </form>
             </div>
-
-            {/* Contact Info */}
-            <div className={styles.contactInfo}>
-              <div className={styles.contactCard}>
-                <div className={styles.contactIcon}><FaWhatsapp /></div>
-                <h3>واتساب</h3>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                  تواصل عبر واتساب
-                </a>
-              </div>
-              <div className={styles.contactCard}>
-                <div className={styles.contactIcon}><FaPhone /></div>
-                <h3>اتصل بنا</h3>
-                <p>15734</p>
-              </div>
-              <div className={styles.contactCard}>
-                <div className={styles.contactIcon}><FaEnvelope /></div>
-                <h3>البريد الإلكتروني</h3>
-                <p>info@jayamark.com</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -700,17 +655,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Floating WhatsApp Button */}
-      <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.floatingWhatsapp}
-        aria-label="تواصل عبر واتساب"
-      >
-        <FaWhatsapp className={styles.whatsappIconFloat} />
-      </a>
 
       {/* Image Lightbox */}
       {selectedImage && (
