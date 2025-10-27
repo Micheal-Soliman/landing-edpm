@@ -38,7 +38,7 @@ export default function Home() {
     try {
       // استبدل هذا الرابط بـ Google Apps Script URL الخاص بك
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVF4QSrX3-4n50xqCSRVgBQhLxQ-cwHjE8nOnQQgqJaY89SH0PWqpYiCn61rwNW4C58A/exec';
-      
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -91,7 +91,7 @@ export default function Home() {
     <div className={styles.container}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <video 
+        <video
           className={styles.heroVideo}
           autoPlay
           loop
@@ -130,7 +130,7 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>نبذة عن مشروعنا</h2>
           <p className={styles.sectionSubtitle}>تعرف على مشروع Jaya Mark وكل ما يميزه من خلال هذا الفيديو</p>
           <div className={styles.videoWrapper}>
-            <video 
+            <video
               className={styles.video}
               controls
               autoPlay
@@ -152,7 +152,7 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>اختر الوحدة المناسبة لك</h2>
           <p className={styles.sectionSubtitle}>مكاتب بمساحات مختلفة تناسب احتياجك</p>
-          
+
           <div className={styles.priceHighlightBox}>
             <div className={styles.priceItem}>
               <span className={styles.priceIcon}>🏢</span>
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className={styles.unitTabs}>
             {Object.entries(unitTypes).map(([key, unit]) => (
               <button
@@ -194,7 +194,7 @@ export default function Home() {
             <div className={styles.unitCard}>
               <h3>{unitTypes[activeTab].name}</h3>
               <div className={styles.unitInfo}>
-                  <span className={styles.highlightText}>{unitTypes[activeTab].area}</span>
+                <span className={styles.highlightText}>{unitTypes[activeTab].area}</span>
                 <div className={styles.infoItem}>
                   <span className={styles.infoLabel}>السعر</span>
                   <span className={styles.infoValue}>{unitTypes[activeTab].price}</span>
@@ -210,7 +210,7 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>مميزات الوحدات دوناً عن سواها</h2>
           <p className={styles.sectionSubtitle}>ليه تشتري الوحدات دي؟</p>
-          
+
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><FaWifi /></div>
@@ -250,7 +250,7 @@ export default function Home() {
           </div>
 
           <div className={styles.featureHighlight}>
-            <h3>يعني كل يوم طاقة أكبر وإنجاز أكتر <IoRocketSharp style={{display: 'inline'}} /></h3>
+            <h3>يعني كل يوم طاقة أكبر وإنجاز أكتر <IoRocketSharp style={{ display: 'inline' }} /></h3>
           </div>
         </div>
       </section>
@@ -260,7 +260,7 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>ضمان استثمارك</h2>
           <p className={styles.sectionSubtitle}>استثمار آمن ومضمون بأعلى معايير الجودة</p>
-          
+
           <div className={styles.priceHighlightBox}>
             <div className={styles.priceItem}>
               <span className={styles.priceIcon}>📍</span>
@@ -309,9 +309,9 @@ export default function Home() {
       <section className={styles.pricingSection} id="pricing">
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>سعر الوحدات وأنظمة التقسيط المتاحة</h2>
-          
+
           <div className={styles.pricingHighlight}>
-            <h3 className={styles.pricingTitle}>المفاجأة إن أسعارنا بتبدأ من 3.5 مليون جنيه في اول مربع</h3>
+            <h3 className={styles.pricingTitle}>المفاجأة إن أسعارنا بتبدأ من 3.5 مليون جنيه</h3>
           </div>
 
           <div className={styles.pricingGrid}>
@@ -321,7 +321,10 @@ export default function Home() {
               <div className={styles.pricingDiscount}>
                 <span className={styles.discountPercentRed}>25% خصم</span>
               </div>
-              <p className={styles.pricingDescWhite}>لما تدفع كاش</p>
+              <ul className={styles.pricingFeatures}>
+                <li>✓ لما تدفع كاش</li>
+                <li>✓ الاستلام من 9 شهور لحد 3 سنين</li>
+              </ul>
             </div>
 
             <div className={styles.pricingCard}>
@@ -331,7 +334,6 @@ export default function Home() {
               </div>
               <ul className={styles.pricingFeatures}>
                 <li>✓ مقدم 5% فقط من سعر الوحدة</li>
-                <li>✓ <span className={styles.redText}>خصم حتى 10%</span> من سعر الوحدة</li>
                 <li>✓ أنظمة سداد مرنة</li>
                 <li>✓ الاستلام من 9 شهور لحد 3 سنين</li>
               </ul>
@@ -349,7 +351,7 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>معرض صور المشروع</h2>
           <p className={styles.sectionSubtitle}>شاهد التصميمات الواقعية للمشروع</p>
-          
+
           <div className={styles.galleryGrid}>
             <div className={styles.galleryItem} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761085410/001_ecpdeu.jpg")}>
               <Image src="https://res.cloudinary.com/dmt7nqvc0/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1761085410/001_ecpdeu.jpg" alt="Jaya Mark Render 1" width={800} height={600} className={styles.galleryImage} loading="lazy" />
@@ -397,60 +399,60 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>آراء عملائنا</h2>
           <p className={styles.sectionSubtitle}>ثقة عملائنا هي أكبر إنجازاتنا</p>
-          
+
           <div className={styles.testimonialsGrid}>
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.45.47_AM_amj4mk.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.45.47_AM_amj4mk.jpg" 
-                alt="رأي عميل 1" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.45.47_AM_amj4mk.jpg"
+                alt="رأي عميل 1"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.46.01_AM_zlo0os.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.46.01_AM_zlo0os.jpg" 
-                alt="رأي عميل 2" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515669/WhatsApp_Image_2025-10-27_at_12.46.01_AM_zlo0os.jpg"
+                alt="رأي عميل 2"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.27_AM_j8rsbh.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.27_AM_j8rsbh.jpg" 
-                alt="رأي عميل 3" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.27_AM_j8rsbh.jpg"
+                alt="رأي عميل 3"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.16_AM_wwvbod.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.16_AM_wwvbod.jpg" 
-                alt="رأي عميل 4" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.16_AM_wwvbod.jpg"
+                alt="رأي عميل 4"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.58_AM_gcxjsx.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.58_AM_gcxjsx.jpg" 
-                alt="رأي عميل 5" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.58_AM_gcxjsx.jpg"
+                alt="رأي عميل 5"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.41_AM_jdjkk7.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.41_AM_jdjkk7.jpg" 
-                alt="رأي عميل 6" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515668/WhatsApp_Image_2025-10-27_at_12.46.41_AM_jdjkk7.jpg"
+                alt="رأي عميل 6"
                 className={styles.testimonialImg}
               />
             </div>
 
             <div className={styles.testimonialCard} onClick={() => setSelectedImage("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515667/WhatsApp_Image_2025-10-27_at_12.45.30_AM_xqyuzl.jpg")}>
-              <img 
-                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515667/WhatsApp_Image_2025-10-27_at_12.45.30_AM_xqyuzl.jpg" 
-                alt="رأي عميل 7" 
+              <img
+                src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1761515667/WhatsApp_Image_2025-10-27_at_12.45.30_AM_xqyuzl.jpg"
+                alt="رأي عميل 7"
                 className={styles.testimonialImg}
               />
             </div>
@@ -463,10 +465,10 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>الأسئلة الشائعة</h2>
           <p className={styles.sectionSubtitle}>إجابات على أكثر الأسئلة شيوعاً</p>
-          
+
           <div className={styles.faqContainer}>
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
@@ -475,13 +477,13 @@ export default function Home() {
               </button>
               {openFaq === 0 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات التجارية بمساحات متنوعة تبدأ من 27 متر بمتوسط سعر 8.5 مليون جنيه.</p>
+                  <p>الوحدات التجارية بمساحات متنوعة تناسب احتياجك بمتوسط سعر 8.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
 
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
               >
@@ -490,13 +492,13 @@ export default function Home() {
               </button>
               {openFaq === 1 && (
                 <div className={styles.faqAnswer}>
-                  <p>الوحدات الإدارية والطبية بمساحات متنوعة تبدأ من 27 متر بمتوسط سعر 3.5 مليون جنيه.</p>
+                  <p>الوحدات الإدارية والطبية بمساحات متنوعة تناسب احتياجك بمتوسط سعر 3.5 مليون جنيه.</p>
                 </div>
               )}
             </div>
 
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
@@ -511,7 +513,7 @@ export default function Home() {
             </div>
 
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
               >
@@ -526,7 +528,7 @@ export default function Home() {
             </div>
 
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
               >
@@ -541,7 +543,7 @@ export default function Home() {
             </div>
 
             <div className={styles.faqItem}>
-              <button 
+              <button
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}
               >
@@ -563,7 +565,7 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>تواصل معنا الآن</h2>
           <p className={styles.sectionSubtitle}>فريقنا جاهز للرد على استفساراتك</p>
-          
+
           <div className={styles.contactWrapper}>
             {/* Contact Form */}
             <div className={styles.contactFormContainer}>
@@ -580,7 +582,7 @@ export default function Home() {
                     className={styles.formInput}
                   />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <input
                     type="tel"
@@ -595,7 +597,7 @@ export default function Home() {
                     className={styles.formInput}
                   />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <input
                     type="email"
@@ -607,7 +609,7 @@ export default function Home() {
                     className={styles.formInput}
                   />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <select
                     name="unitType"
@@ -621,7 +623,7 @@ export default function Home() {
                     <option value="غير محدد">غير محدد</option>
                   </select>
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <textarea
                     name="message"
@@ -632,19 +634,19 @@ export default function Home() {
                     className={styles.formTextarea}
                   ></textarea>
                 </div>
-                
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   className={styles.formButton}
                   disabled={formStatus === 'loading'}
                 >
                   {formStatus === 'loading' ? 'جاري الإرسال...' : 'إرسال'}
                 </button>
-                
+
                 {formStatus === 'success' && (
                   <p className={styles.formSuccess}>تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</p>
                 )}
-                
+
                 {formStatus === 'error' && (
                   <p className={styles.formError}>حدث خطأ. يرجى المحاولة مرة أخرى.</p>
                 )}
@@ -663,7 +665,7 @@ export default function Home() {
               <div className={styles.contactCard}>
                 <div className={styles.contactIcon}><FaPhone /></div>
                 <h3>اتصل بنا</h3>
-                <p>+20 100 000 0000</p>
+                <p>15734</p>
               </div>
               <div className={styles.contactCard}>
                 <div className={styles.contactIcon}><FaEnvelope /></div>
@@ -700,10 +702,10 @@ export default function Home() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <a 
-        href={whatsappLink} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className={styles.floatingWhatsapp}
         aria-label="تواصل عبر واتساب"
       >
@@ -717,9 +719,9 @@ export default function Home() {
             <FaTimes />
           </button>
           <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-            <img 
-              src={selectedImage} 
-              alt="Jaya Mark" 
+            <img
+              src={selectedImage}
+              alt="Jaya Mark"
               className={styles.lightboxImage}
             />
           </div>
