@@ -15,8 +15,8 @@ export default function Home() {
     name: '',
     phone: '',
     email: '',
-    unitType: 'تجاري',
-    message: ''
+    job: '',
+    unitType: 'تجاري'
   });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -37,7 +37,7 @@ export default function Home() {
 
     try {
       // استبدل هذا الرابط بـ Google Apps Script URL الخاص بك
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVF4QSrX3-4n50xqCSRVgBQhLxQ-cwHjE8nOnQQgqJaY89SH0PWqpYiCn61rwNW4C58A/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbywgY2ax318eTleEYVvpo1z6T6pyzbIMeemBkGLbJdd3gKtulowT7YBRdD5vwvAODx0tg/exec';
 
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -49,8 +49,8 @@ export default function Home() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
+          job: formData.job,
           unitType: formData.unitType,
-          message: formData.message,
           timestamp: new Date().toISOString()
         })
       });
@@ -60,8 +60,8 @@ export default function Home() {
         name: '',
         phone: '',
         email: '',
-        unitType: 'تجاري',
-        message: ''
+        job: '',
+        unitType: 'تجاري'
       });
 
       setTimeout(() => setFormStatus('idle'), 3000);
@@ -144,6 +144,12 @@ export default function Home() {
               متصفحك لا يدعم تشغيل الفيديو
             </video>
           </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
+          </div>
         </div>
       </section>
 
@@ -201,6 +207,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
+          </div>
         </div>
       </section>
 
@@ -251,6 +263,12 @@ export default function Home() {
           <div className={styles.featureHighlight}>
             <h3>يعني كل يوم طاقة أكبر وإنجاز أكتر <IoRocketSharp style={{ display: 'inline' }} /></h3>
           </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
+          </div>
         </div>
       </section>
 
@@ -277,6 +295,12 @@ export default function Home() {
               <h3>جودة بناء عالية</h3>
               <p>تشطيبات فاخرة ومواد عالية الجودة</p>
             </div>
+          </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
           </div>
         </div>
       </section>
@@ -318,6 +342,12 @@ export default function Home() {
 
           <div className={styles.pricingNote}>
             <p>مفيش أسهل من كدا! 🎉</p>
+          </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
           </div>
         </div>
       </section>
@@ -433,6 +463,12 @@ export default function Home() {
               />
             </div>
           </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
+          </div>
         </div>
       </section>
 
@@ -533,6 +569,12 @@ export default function Home() {
               )}
             </div>
           </div>
+          <div className={styles.whatsappButtonWrapper}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <FaWhatsapp className={styles.whatsappIcon} />
+              تواصل معنا عبر واتساب
+            </a>
+          </div>
         </div>
       </section>
 
@@ -541,11 +583,11 @@ export default function Home() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>تواصل معنا الآن</h2>
           <p className={styles.sectionSubtitle}>فريقنا جاهز للرد على استفساراتك</p>
-          <p className={styles.contactPhone}>للاستفسار اتصل بنا على: <a href="tel:15734" className={styles.phoneLink}>15734</a></p>
 
-          <div className={styles.contactFormWrapper}>
+          <div className={styles.contactContentWrapper}>
+            {/* Contact Form - Right Side */}
             <div className={styles.contactFormContainer}>
-              <h3 className={styles.formTitle}>أرسل لنا رسالة</h3>
+              <h3 className={styles.formTitle}>سجل بياناتك و هنتواصل معاك</h3>
               <form onSubmit={handleFormSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
                   <input
@@ -587,6 +629,18 @@ export default function Home() {
                 </div>
 
                 <div className={styles.formGroup}>
+                  <input
+                    type="text"
+                    name="job"
+                    value={formData.job}
+                    onChange={handleFormChange}
+                    placeholder="الوظيفة"
+                    required
+                    className={styles.formInput}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
                   <select
                     name="unitType"
                     value={formData.unitType}
@@ -598,17 +652,6 @@ export default function Home() {
                     <option value="طبي">وحدة طبية</option>
                     <option value="غير محدد">غير محدد</option>
                   </select>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleFormChange}
-                    placeholder="رسالتك"
-                    rows={4}
-                    className={styles.formTextarea}
-                  ></textarea>
                 </div>
 
                 <button
@@ -627,6 +670,33 @@ export default function Home() {
                   <p className={styles.formError}>حدث خطأ. يرجى المحاولة مرة أخرى.</p>
                 )}
               </form>
+            </div>
+
+            {/* Contact Cards - Left Side */}
+            <div className={styles.contactCardsContainer}>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
+                <div className={styles.contactCardIcon}>
+                  <FaWhatsapp />
+                </div>
+                <h3>واتساب</h3>
+                <p>تواصل معنا مباشرة</p>
+              </a>
+
+              <a href="mailto:info@edpm.com.eg" className={styles.contactCard}>
+                <div className={styles.contactCardIcon}>
+                  <FaEnvelope />
+                </div>
+                <h3>البريد الإلكتروني</h3>
+                <p>info@edpm.com.eg</p>
+              </a>
+
+              <a href="tel:15734" className={styles.contactCard}>
+                <div className={styles.contactCardIcon}>
+                  <FaPhone />
+                </div>
+                <h3>الخط الساخن</h3>
+                <p>15734</p>
+              </a>
             </div>
           </div>
         </div>
@@ -671,6 +741,17 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Floating WhatsApp Button */}
+      <a 
+        href={whatsappLink} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={styles.floatingWhatsapp}
+        aria-label="تواصل عبر واتساب"
+      >
+        <FaWhatsapp />
+      </a>
     </div>
   );
 }

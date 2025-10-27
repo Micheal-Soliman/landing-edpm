@@ -15,7 +15,7 @@ function doPost(e) {
     
     // إذا كانت أول مرة، أضف العناوين
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['التاريخ', 'الوقت', 'الاسم', 'الهاتف', 'البريد الإلكتروني', 'نوع الوحدة', 'الرسالة']);
+      sheet.appendRow(['التاريخ', 'الوقت', 'الاسم', 'الهاتف', 'البريد الإلكتروني', 'الوظيفة', 'مهتم بـ']);
     }
     
     // احصل على البيانات من الطلب
@@ -33,22 +33,22 @@ function doPost(e) {
       data.name,
       data.phone,
       data.email,
-      data.unitType,
-      data.message
+      data.job,
+      data.unitType
     ]);
     
     // إرسال إشعار بالبريد الإلكتروني (اختياري)
     // استبدل بالبريد الإلكتروني الخاص بك
     const emailAddress = 'your-email@example.com';
-    const subject = 'استفسار جديد من موقع Jaya Mark';
+    const subject = 'تسجيل جديد من موقع Jaya Mark';
     const body = `
-      استفسار جديد:
+      تسجيل بيانات جديد:
       
       الاسم: ${data.name}
       الهاتف: ${data.phone}
       البريد الإلكتروني: ${data.email}
-      نوع الوحدة: ${data.unitType}
-      الرسالة: ${data.message}
+      الوظيفة: ${data.job}
+      مهتم بـ: ${data.unitType}
       
       التاريخ: ${date}
       الوقت: ${time}
