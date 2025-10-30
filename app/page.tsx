@@ -20,7 +20,7 @@ export default function Home() {
   });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const whatsappNumber = "201000000000"; // استبدل برقم الواتساب الفعلي
+  const whatsappNumber = "201050419927";
   const whatsappMessage = encodeURIComponent("مرحباً، أريد الاستفسار عن مشروع Jaya Mark");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
